@@ -1,11 +1,11 @@
 import db from '../db.js';
 
-export const getAllBooks = async (req, res) => {
+export const getAllBooksUsers = async (req, res) => {
   try {
-    const result = await db.execute('SELECT * FROM libros');
+    const result = await db.execute('SELECT * FROM libros_usuarios');
     res.json(result.rows);
   } catch (error) {
-    res.status(500).json({ error: 'Error al obtener libros' });
+    res.status(500).json({ error: 'Error al obtener libros-usuarios' });
   }
 };
 
