@@ -1,10 +1,11 @@
 import express from 'express';
-import { getAllUsers, getUserById } from '../controllers/userController.js';
+import { getAllBooksUsers, getBooksUsersById, createBookUsers } from '../controllers/booksUsersController.js';
 
 const router = express.Router();
 
-router.get('/', getAllUsers);
-router.get('/:id', getUserById);
+router.get('/', getAllBooksUsers);
+router.get('/:id', getBooksUsersById);
+router.post('/', createBookUsers);
 
 export default router;
 
