@@ -7,14 +7,14 @@ import genreRoutes from './routes/genreRoutes.js'
 import authorRoutes from './routes/authorRoutes.js'
 import booksUsersRoutes from './routes/booksUsersRoutes.js'
 
-import { checkConnection } from './db.js';
+//import { checkConnection } from './db.js';
 dotenv.config();
 
 const app = express();
 app.disable('x-powered-by')
 app.use(express.json());
 
-checkConnection()
+//checkConnection()
 
 // Tus rutas y configuraciones aquí
 app.use('/auth', authRoutes);
