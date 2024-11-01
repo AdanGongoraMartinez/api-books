@@ -3,6 +3,8 @@ import express from 'express';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import bookRoutes from './routes/bookRoutes.js';
+import genreRoutes from './routes/genreRoutes.js'
+import authorRoutes from './routes/authorRoutes.js'
 
 import { checkConnection } from './db.js';
 dotenv.config();
@@ -17,6 +19,8 @@ checkConnection()
 app.use('/auth', authRoutes);
 app.use('/user', userRoutes);
 app.use('/books', bookRoutes);
+app.use('/genres', genreRoutes);
+app.use('/authors', authorRoutes);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
