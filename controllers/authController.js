@@ -30,9 +30,9 @@ export const login = async (req, res) => {
         if (user && (await bcrypt.compare(contraseña, user.contraseña))) {
             // const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_EXPIRES_IN });
             // res.json({ token });
-            res.status(200).json({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' })
+            res.status(200).json({ "success": true, token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' })
         } else {
-            res.status(400).json({ error: 'Credenciales incorrectas' });
+            res.status(400).json({ "success": false, error: 'Credenciales incorrectas' });
         }
     } catch (error) {
         console.log(error.message)
